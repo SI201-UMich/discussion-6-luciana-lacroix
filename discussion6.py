@@ -48,7 +48,7 @@ class HorseRaces:
             race_dict[horse_name] = {}
 
 
-            for i in range(1, len(headers))
+            for i in range(1, len(headers)):
                 race_name = headers[i]
                 race_time = float(row[i])
                 race_dict[horse_name][race_name] = race_time
@@ -87,6 +87,11 @@ class HorseRaces:
 
 
         for race, time in self.race_dict[horse].items():
+            if time < fastest_time:
+                fastest_time = time
+                fastest_race = race
+        
+        return (fastest_race, fastest_time)
         '''
         Given the name of a horse, return its fastest race and time.
         If the horse does not exist, return (None, 999.9)
@@ -98,7 +103,7 @@ class HorseRaces:
             tuple of fastest race name and the time
             EXAMPLE: ('Teio Sho', 14.8)
         '''
-        pass
+        
 
 ###############################################################################
 ##### TASK 3
