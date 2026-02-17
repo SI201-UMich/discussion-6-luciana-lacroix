@@ -131,6 +131,21 @@ class HorseRaces:
 ###############################################################################
 
     def get_average_time(self):
+        averages = {}
+
+        for horse, races in self.race_dict.items():
+            total_time = 0
+            num_races = 0
+
+
+            for time in races.values():
+                total_time += time
+                num_races += 1
+
+
+            averages[horse] = total_time / num_races
+
+        return averages 
         '''
         Calculate the average race time for each horse.
 
