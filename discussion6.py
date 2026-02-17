@@ -79,6 +79,14 @@ class HorseRaces:
 ###############################################################################
 
     def horse_fastest_race(self, horse):
+        if horse not in self.race_dict:
+            return (None, 999.9)
+        
+        fastest_race = None
+        fastest_time = 999.9
+
+
+        for race, time in self.race_dict[horse].items():
         '''
         Given the name of a horse, return its fastest race and time.
         If the horse does not exist, return (None, 999.9)
