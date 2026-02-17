@@ -110,6 +110,13 @@ class HorseRaces:
 ###############################################################################
         
     def horse_personal_best(self):
+        personal_best = {}
+
+        for horse in self.race_dict:
+            personal_best[horse] = self.horse_fastest_race(horse)
+
+
+        return personal_best
         '''
         Calculate the fastest race and time for each horse.
 
@@ -117,7 +124,7 @@ class HorseRaces:
             A dictionary of tuples of each horse, with their fastest race and time.
             EXAMPLE: {"Oguri Cap": ("Tenno Sho Fall", 16.6), "Mejiro McQueen": ("Tenno Sho Fall", 16.1)}
         '''
-        pass
+        
 
 ###############################################################################
 ##### TASK 4
